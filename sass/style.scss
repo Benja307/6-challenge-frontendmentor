@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+$Orange: #ff7d1a;
+$Orange-light: #fc8b35;
+$Pale: #ffede0;
+$Very-dark-blue: #1d2025;
+$Dark-grayish-blue: #68707d;
+$Grayish-blue: #b6bcc8;
+$Light-grayish-blue: #f7f8fd;
+$White: #ffffff;
+$Indice-cart-color: #ff0000;
+$Black: rgb(0, 0, 0);//75% opacity para el ligth bg
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Kumbh Sans', sans-serif;
+    width: 100vw;
+    header{
+        display: flex;
+        width: 100%;
+        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
+        #menu{
+            margin: 0 10px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        #avatar{
+            width: 30px;
+        }
+    }
+}
+
+nav ul{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    background-color: $White;
+    list-style: none;
+    padding: 20px;
+    width: 40%;
+    height: 100vh;
+    #close{
+        margin: 0 0 20px 0;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    li{
+        margin: 10px 0;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+}
+
+#indice-cart{
+    text-align: center;
+    font-size: .7rem;
+    position: absolute;
+    background-color: $Indice-cart-color;
+    color: $White;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    top: 10px;
+    right: 47px;
+}
+
+#carro{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 97%;
+    height: 35vh;
+    right: 5px;
+    background-color: $White;
+    border: 1px solid $Orange;
+    border-radius: 10px;
+    h4{
+        margin-top: 10px;
+    }
+    section{
+        display: flex;
+        width: 100%;
+        padding: 20px 10px;
+        justify-content: space-between;
+        align-items: center;
+        img{
+            width: 60px;
+            border-radius: 5px;
+        }
+        #cart-info{
+            #product-cart{
+                font-size: 1.1rem;
+                color: $Dark-grayish-blue;
+            }
+            #total-cart{
+                font-size: 1rem;
+                color: $Dark-grayish-blue;
+                .precio-final{
+                    color: $Black;
+                }
+            }
+        }
+    }
+    #check{
+        margin: 10px 0;
+        width: 80%;
+        height: 2.5rem;
+        background: linear-gradient(to bottom, $Orange-light 50%, $Orange 50%);
+        color: $White;
+        border: 0;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+}
