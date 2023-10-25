@@ -236,7 +236,7 @@ nav ul li {
 }
 
 .section-info-art form .cantidad input {
-  width: 90%;
+  width: 100%;
   height: 2.2rem;
   border-radius: 5px;
   background-color: #f7f8fd;
@@ -253,12 +253,12 @@ nav ul li {
 
 .section-info-art form .cantidad #mas {
   position: absolute;
-  right: 45px;
+  right: 12px;
   top: 12px;
 }
 
 .section-info-art form button {
-  width: 90%;
+  width: 100%;
   height: 3rem;
   font-size: 1.2rem;
   border: 0;

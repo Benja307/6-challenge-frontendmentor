@@ -193,7 +193,7 @@ nav ul{
         .cantidad{
             position: relative;
             input{
-                width: 90%;
+                width: 100%;
                 height: 2.2rem;
                 border-radius: 5px;
                 background-color: $Light-grayish-blue;
@@ -208,12 +208,12 @@ nav ul{
             }
             #mas{
                 position: absolute;
-                right: 45px;
+                right: 12px;
                 top: 12px;
             }
         }
         button{
-            width: 90%;
+            width: 100%;
             height: 3rem;
             font-size: 1.2rem;
             border: 0;
