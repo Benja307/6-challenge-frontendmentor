@@ -1,5 +1,5 @@
 const close = document.querySelector("#close");
-const menu = document.querySelector("#menu");
+const menu = document.querySelector("#menu-icon");
 const nav_bar = document.querySelector("#nav-bar");
 const cart = document.querySelector("#cart");
 const popup = document.querySelector("#carro");
