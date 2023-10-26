@@ -106,6 +106,7 @@ nav ul li {
 #indice-cart {
   text-align: center;
   font-size: .7rem;
+  font-weight: 700;
   position: absolute;
   background-color: #ff0000;
   color: #ffffff;
@@ -131,10 +132,13 @@ nav ul li {
   position: absolute;
   width: 97%;
   height: 35vh;
-  right: 5px;
+  right: 50px;
   background-color: #ffffff;
-  border: 1px solid #ff7d1a;
+  border: 0;
   border-radius: 10px;
+  box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.3);
 }
 
 #carro h4 {
@@ -216,13 +220,19 @@ nav ul li {
           justify-content: space-between;
 }
 
-.section-info-art #price .descuento {
+.section-info-art #price .precio-art {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.section-info-art #price .precio-art .descuento {
   font-weight: 700;
   color: #ff7d1a;
   background-color: #ffede0;
   padding: 5px;
   border-radius: 5px;
-  margin-right: 130px;
 }
 
 .section-info-art #price .old-price {
@@ -279,5 +289,152 @@ nav ul li {
 
 .section-info-art form button svg {
   margin-right: 5px;
+}
+
+@media (min-width: 1100px) {
+  body header {
+    border-bottom: 1px solid #b6bcc8;
+  }
+  body header #menu-icon {
+    display: none;
+  }
+  body header #indice-cart {
+    top: 20px;
+    right: 40px;
+    width: 20px;
+    height: 20px;
+    font-size: 1.1rem;
+  }
+  body header #cart {
+    width: 40px;
+    height: 30px;
+    margin-right: 15px;
+  }
+  body header #avatar {
+    width: 30px;
+  }
+  body main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 80px;
+    padding: 4rem 4rem 4rem 4rem;
+  }
+  body main section {
+    position: relative;
+  }
+  body main section #img-principal {
+    border-radius: 10px;
+  }
+  body main section .img-miniaturas {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 2rem;
+    padding: 1.5rem 0;
+  }
+  body main section .img-miniaturas img {
+    width: 100px;
+    border-radius: 10px;
+  }
+  body main section .prev {
+    left: 75px;
+    display: none;
+  }
+  body main section .next {
+    display: none;
+  }
+  nav {
+    width: 50%;
+    margin-right: 200px;
+  }
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: static;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    list-style: none;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    z-index: 0;
+  }
+  nav ul #close {
+    display: none;
+  }
+  nav ul li {
+    margin: 10px 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  #carro {
+    width: 40%;
+    height: 40vh;
+    z-index: 2;
+  }
+  #carro h4 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+  }
+  #carro section img {
+    width: 90px;
+  }
+  #carro section #cart-info #product-cart {
+    font-size: 1.3rem;
+  }
+  #carro section #cart-info #total-cart {
+    font-size: 1.2rem;
+  }
+  #carro section #cart-info #total-cart .precio-final {
+    font-size: 1.2rem;
+  }
+  #carro #check {
+    margin: 10px 0;
+    width: 90%;
+    height: 3.5rem;
+    font-size: 1.4rem;
+  }
+  .section-info-art {
+    padding: 3rem 0;
+  }
+  .section-info-art h6 {
+    font-size: 1.2rem;
+  }
+  .section-info-art #price {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .section-info-art form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
+  }
+  .section-info-art form .cantidad input {
+    height: 3rem;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  .section-info-art form .cantidad #menos {
+    top: 23px;
+  }
+  .section-info-art form .cantidad #mas {
+    top: 17px;
+  }
+  .section-info-art form button {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
