@@ -1,21 +1,23 @@
-const close = document.querySelector("#close");
-const menu = document.querySelector("#menu-icon");
-const nav_bar = document.querySelector("#nav-bar");
-const cart = document.querySelector("#cart");
-const popup = document.querySelector("#carro");
+const icon_menu = document.querySelector("#icon-menu");
+const icon_close = document.querySelector("#icon-close");
+const menu = document.querySelector("nav");
+const icon_cart = document.querySelector("#icon-cart");
+const modal_cart = document.querySelector("#modal-cart");
 
-menu.addEventListener("click",()=>{
-    nav_bar.style.display = "flex";
+
+icon_menu.addEventListener("click",()=>{
+    menu.style.display = "flex";
 })
 
-close.addEventListener("click",()=>{
-    nav_bar.style.display = "none";
+icon_close.addEventListener("click",()=>{
+    menu.style.display = "none";
 })
 
-cart.addEventListener("click",()=>{
-    if(popup.style.display === ""){
-        popup.style.display = "flex";
-    }else if(popup.style.display === "flex"){
-        popup.style.display = "";
+icon_cart.addEventListener("click",()=>{
+    if(modal_cart.style.display === "flex"){
+        modal_cart.style.display = ""
+    }
+    else if(modal_cart.style.display === ""){
+            modal_cart.style.display = "flex";
     }
 })

@@ -19,401 +19,235 @@ $Black: rgb(0, 0, 0);//75% opacity para el ligth bg
 }
 
 body{
-    font-family: 'Kumbh Sans', sans-serif;
     width: 100vw;
     header{
         display: flex;
-        width: 100vw;
-        padding: 10px;
         justify-content: space-between;
-        align-items: center;
-        #menu-icon{
-            margin: 0 10px;
-            &:hover{
-                cursor: pointer;
+        padding: 1rem;
+        border-bottom: 1px solid $Grayish-blue;
+        .header-div-1{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            #icon-menu{
+                font-size: 1.2rem;
             }
         }
-        #indice-cart{
-            text-align: center;
-            font-size: .7rem;
-            font-weight: 700;
+        nav{
+            display: none;
             position: absolute;
-            background-color: $Indice-cart-color;
-            color: $White;
-            border-radius: 50%;
-            width: 15px;
-            height: 15px;
-            top: 0.9rem;
-            right: 2.5rem;
+            top: 0;
+            left: 0;
+            box-shadow: 0 0 0 100vmax rgba(#000000,0.75);
+            height: 100vh;
+            background-color: $White;
+            z-index: 1;
+            ul{
+                display: flex;
+                gap: 2rem;
+                flex-direction: column;
+                list-style: none;
+                #icon-close{
+                    font-size: 2rem;
+                }
+                li a{
+                    margin: 0 1.5rem;
+                    text-decoration: none;
+                    color: $Black;
+                    font-weight: 700;
+                }
+            }
         }
-        #avatar{
-            width: 30px;
+        .header-div-2{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            div{
+                position: relative;
+                #indice-cart{
+                    display: none;
+                    position: absolute;
+                    background-color: $Indice-cart-color;
+                    color: $White;
+                    font-size: 1rem;
+                    bottom: 1rem;
+                    left: 1rem;
+                    font-weight: 700;
+                    text-align: center;
+                    width: 1.1rem;
+                    height: 1.1rem;
+                    border-radius: 50%;
+                }
+                #icon-cart{
+                    font-size: 1.6rem;
+                }
+            }
+            #icon-avatar{
+                width: 1.9rem;
+                height: 1.9rem;
+            }
         }
     }
     main{
-        width: 100vw;
-        section{//seccion de visualizacion del producto
-            width: 100%;
-            #img-principal{
-                width: 100%;
-                height: 60vh;
-            }
-            .prev{
-                position: absolute;
-                top: 200px;
-                left: 10px;
-                font-size: 2rem;
-                color: $White;
-            }
-            .next{
-                position: absolute;
-                top: 200px;
-                right: 10px;
-                font-size: 2rem;
-                color: $White;
-            }
-            .img-miniaturas{
-                display: none;
-            }
-        }
+        display: none;
     }
 }
 
-nav ul{
-    display: none;
-    flex-direction: column;
+#modal-cart{
     position: absolute;
-    left: 0;
-    top: 40px;
-    background-color: $White;
-    list-style: none;
-    padding: 20px;
-    width: 40%;
-    height: 100vh;
-    z-index: 1;
-    #close{
-        margin: 0 0 20px 0;
-        &:hover{
-            cursor: pointer;
-        }
-    }
-    li{
-        margin: 10px 0;
-        font-size: 1.2rem;
-        font-weight: 700;
-        a{
-            text-decoration: none;
-            color: $Black;
-        }
-    }
-}
-
-#carro{
+    top: 3rem;
+    right: 1.5rem;
     display: none;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    position: absolute;
-    width: 90vw;
-    height: 35vh;
-    right: 1rem;
     background-color: $White;
-    border: 0;
-    border-radius: 10px;
-    z-index: 1;
+    border: 1px solid $Orange;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    gap: 1rem;
     box-shadow: 20px 20px 20px 0px rgba(0,0,0,0.3);
     -webkit-box-shadow: 20px 20px 20px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 20px 20px 20px 0px rgba(0,0,0,0.3);
     h4{
-        margin-top: 10px;
+        font-size: 1.2rem;
     }
-    section{//informacion carrito de compras
+    section{
         display: flex;
-        width: 100%;
-        padding: 20px 10px;
-        justify-content: space-between;
         align-items: center;
+        gap: 1rem;
         img{
-            width: 60px;
-            border-radius: 5px;
+            width: 80px;
+            height: 80px;
+            border-radius: 0.4rem;
         }
         div{
-            h5{
-                font-size: 1.1rem;
-                color: $Dark-grayish-blue;
-            }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.4rem;
             h4{
-                font-size: 1rem;
-                color: $Dark-grayish-blue;
+                font-size: 1.2rem;
+            }
+            h5{
+                color: $Grayish-blue;
+                font-size: 1.1rem;
                 .precio-final{
                     color: $Black;
                 }
             }
         }
+        #icon-trash{
+            font-size: 1.2rem;
+        }
     }
     #check-btn{
-        margin: 10px 0;
-        width: 80%;
-        height: 2.5rem;
-        background: linear-gradient(to bottom, $Orange-light 50%, $Orange 50%);
-        color: $White;
         border: 0;
-        border-radius: 10px;
+        border-radius: .4rem;
+        width: 90%;
         font-size: 1rem;
         font-weight: 700;
+        color: $White;
+        background: linear-gradient(to bottom, $Orange-light 50%, $Orange 50%);
+        padding: .5rem 0;
     }
 }
 
-.section-info-art{//seccion informativa del producto
-    padding: 1.3rem;
-    h6{
-        margin-bottom: 0.8rem;
-        text-transform: uppercase;
-        color: $Orange;
-    }
-    h1{
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-    }
-    p{
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
-    }
-    div{
-        display: flex;
-        justify-content: space-between;
-        .precio-art{
-            display: flex;
-            gap: 1rem;
-            .descuento{
-                font-weight: 700;
-                color: $Orange;
-                background-color: $Pale;
-                padding: 5px;
-                border-radius: 5px;
-            }
-        }
-        .old-price{
-            font-weight: 700;
-            color: $Dark-grayish-blue;
-            text-decoration: line-through;
-        }
-    }
-    form{
-        div{
-            position: relative;
-            input{
-                width: 100%;
-                height: 2.2rem;
-                border-radius: 5px;
-                background-color: $Light-grayish-blue;
-                text-align: center;
-                margin-bottom: 10px;
-                border: 1px solid $Orange-light;
-                -moz-appearance: textfield;
-                &::-webkit-inner-spin-button {
-                    -webkit-appearance: none;
-                    appearance: none;
-                    margin: 0;
-                }
-            }
-            #menos{
-                position: absolute;
-                left: 12px;
-                top: 17px;
-            }
-            #mas{
-                position: absolute;
-                right: 12px;
-                top: 12px;
-            }
-        }
-        #add-cart-btn{
-            width: 100%;
-            height: 3rem;
-            font-size: 1.2rem;
-            border: 0;
-            color: $White;
-            font-weight: 700;
-            background: linear-gradient(to bottom, $Orange-light 50%, $Orange 50%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            svg{
-                margin-right: 5px;
-            }
-        }
-    }
-}
-
-
-@media (orientation:landscape){
-    body{
-        main{
-            .imagenes-art{//seccion de visualizacion del producto
-                text-align: center;
-                #img-principal{
-                    width: 90%;
-                    height: 100vh;
-                }
-                .prev{
-                    left: 3rem;
-                }
-                .next{
-                    right: 3rem;
-                }
-            }
-        }
-    }
-
-    .section-info-art{//seccion informativa del producto
-        flex-direction: column;
-    }
-    #carro{
-        width: 80vw;
-        height: 50vh;
-    }
-}
+/*-------------- DESKTOP ----------------------*/
 
 @media (min-width:1100px){
     body{
         header{
-            border-bottom: 1px solid $Grayish-blue;
-            #menu-icon{
-                display: none;
+            align-items: center;
+            .header-div-1{
+                #icon-menu{
+                    display: none;
+                }
             }
-            #indice-cart{
-                width: 20px;
-                height: 20px;
-                font-size: 1.1rem;
+            nav{
+                display: flex;
+                position: static;
+                box-shadow: 0 0 0 0;
+                height: auto;
+                background-color: transparent;
+                z-index: 0;
+                ul{
+                    flex-direction: row;
+                    #icon-close{
+                        display: none;
+                    }
+                    li a{
+                        margin: 0;
+                        font-weight: 400;
+                    }
+                }
             }
-            #cart{
-                width: 40px;
-                height: 30px;
-                margin-right: 0;
-            }
-            #avatar{
-                width: 30px;
+            .header-div-2{
+                #icon-avatar{
+                    width: 1.9rem;
+                    height: 1.9rem;
+                }
             }
         }
         main{
-            display: flex;
-            gap: 80px;
-            padding: 4rem 4rem 4rem 4rem;
-            section{
-                position: relative;
-                #img-principal{
-                    border-radius: 10px;
-                }
-                .img-miniaturas{
-                    display: flex;
-                    gap: 2rem;
-                    padding: 1.5rem 0;
-                    img{
-                        width: 100px;
-                        border-radius: 10px;
-                    }
-                }
-                .prev{
-                    left: 75px;
-                    display: none;
-                }
-                .next{
-                    display: none;
-                }
-            }
-        }
-    }
-    
-    nav{
-        width: 50%;
-        margin-right: 200px;
-    }
-
-    nav ul{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        position: static;
-        left: 0;
-        top: 0;
-        background-color: transparent;
-        list-style: none;
-        padding: 10px;
-        width: auto;
-        height: auto;
-        z-index: 0;
-        #close{
             display: none;
         }
-        li{
-            margin: 10px 0;
-            font-size: 1.4rem;
-            font-weight: 400;
-            a{
-                &:hover{
-                    color: $Orange;
-                    border-bottom: 1px solid $Orange;
-                }
-            }
-        }
     }
     
-    #carro{
-        width: 40%;
-        height: 40vh;
+    #modal-cart{
+        position: absolute;
+        top: 3rem;
+        right: 1.5rem;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: $White;
+        border: 1px solid $Orange;
+        border-radius: 0.4rem;
+        padding: 1rem;
+        margin: 0.5rem;
+        gap: 1rem;
         h4{
-            margin-top: 20px;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
         section{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             img{
-                width: 90px;
+                width: 80px;
+                height: 80px;
+                border-radius: 0.4rem;
             }
             div{
-                h5{
-                    font-size: 1.3rem;
-                }
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 0.4rem;
                 h4{
                     font-size: 1.2rem;
+                }
+                h5{
+                    color: $Grayish-blue;
+                    font-size: 1.1rem;
                     .precio-final{
-                        font-size: 1.2rem;
+                        color: $Black;
                     }
                 }
+            }
+            #icon-trash{
+                font-size: 1.2rem;
             }
         }
         #check-btn{
-            margin: 10px 0;
+            border: 0;
+            border-radius: .4rem;
             width: 90%;
-            height: 3.5rem;
-            font-size: 1.4rem;
-        }
-    }
-    
-    .section-info-art{
-        padding: 3rem 0;
-        h6{
-            font-size: 1.2rem;
-        }
-        form{
-            display: flex;
-            gap: 1rem;
-            div{
-                input{
-                    height: 3rem;
-                    font-size: 1.5rem;
-                    margin: 0;
-                }
-                #menos{
-                    top: 23px;
-                }
-                #mas{
-                    top: 17px;
-                }
-            }
-            #add-cart-btn{
-                width: 90%;
-            }
+            font-size: 1rem;
+            font-weight: 700;
+            color: $White;
+            background: linear-gradient(to bottom, $Orange-light 50%, $Orange 50%);
+            padding: .5rem 0;
         }
     }
 }
