@@ -34,6 +34,20 @@ body header #menu-icon:hover {
   cursor: pointer;
 }
 
+body header #indice-cart {
+  text-align: center;
+  font-size: .7rem;
+  font-weight: 700;
+  position: absolute;
+  background-color: #ff0000;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  top: 0.9rem;
+  right: 2.5rem;
+}
+
 body header #avatar {
   width: 30px;
 }
@@ -57,7 +71,6 @@ body main section .prev {
   left: 10px;
   font-size: 2rem;
   color: #ffffff;
-  z-index: 1;
 }
 
 body main section .next {
@@ -86,7 +99,7 @@ nav ul {
   padding: 20px;
   width: 40%;
   height: 100vh;
-  z-index: 2;
+  z-index: 1;
 }
 
 nav ul #close {
@@ -103,18 +116,9 @@ nav ul li {
   font-weight: 700;
 }
 
-#indice-cart {
-  text-align: center;
-  font-size: .7rem;
-  font-weight: 700;
-  position: absolute;
-  background-color: #ff0000;
-  color: #ffffff;
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  top: 10px;
-  right: 47px;
+nav ul li a {
+  text-decoration: none;
+  color: black;
 }
 
 #carro {
@@ -130,12 +134,13 @@ nav ul li {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  width: 97%;
+  width: 90vw;
   height: 35vh;
-  right: 50px;
+  right: 1rem;
   background-color: #ffffff;
   border: 0;
   border-radius: 10px;
+  z-index: 1;
   box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.3);
@@ -164,21 +169,21 @@ nav ul li {
   border-radius: 5px;
 }
 
-#carro section #cart-info #product-cart {
+#carro section div h5 {
   font-size: 1.1rem;
   color: #68707d;
 }
 
-#carro section #cart-info #total-cart {
+#carro section div h4 {
   font-size: 1rem;
   color: #68707d;
 }
 
-#carro section #cart-info #total-cart .precio-final {
+#carro section div h4 .precio-final {
   color: black;
 }
 
-#carro #check {
+#carro #check-btn {
   margin: 10px 0;
   width: 80%;
   height: 2.5rem;
@@ -192,11 +197,11 @@ nav ul li {
 }
 
 .section-info-art {
-  padding: 20px;
+  padding: 1.3rem;
 }
 
 .section-info-art h6 {
-  margin-bottom: 10px;
+  margin-bottom: 0.8rem;
   text-transform: uppercase;
   color: #ff7d1a;
 }
@@ -211,7 +216,7 @@ nav ul li {
   margin-bottom: 1.5rem;
 }
 
-.section-info-art #price {
+.section-info-art div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -220,14 +225,14 @@ nav ul li {
           justify-content: space-between;
 }
 
-.section-info-art #price .precio-art {
+.section-info-art div .precio-art {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 1rem;
 }
 
-.section-info-art #price .precio-art .descuento {
+.section-info-art div .precio-art .descuento {
   font-weight: 700;
   color: #ff7d1a;
   background-color: #ffede0;
@@ -235,17 +240,17 @@ nav ul li {
   border-radius: 5px;
 }
 
-.section-info-art #price .old-price {
+.section-info-art div .old-price {
   font-weight: 700;
   color: #68707d;
   text-decoration: line-through;
 }
 
-.section-info-art form .cantidad {
+.section-info-art form div {
   position: relative;
 }
 
-.section-info-art form .cantidad input {
+.section-info-art form div input {
   width: 100%;
   height: 2.2rem;
   border-radius: 5px;
@@ -253,21 +258,28 @@ nav ul li {
   text-align: center;
   margin-bottom: 10px;
   border: 1px solid #fc8b35;
+  -moz-appearance: textfield;
 }
 
-.section-info-art form .cantidad #menos {
+.section-info-art form div input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.section-info-art form div #menos {
   position: absolute;
   left: 12px;
   top: 17px;
 }
 
-.section-info-art form .cantidad #mas {
+.section-info-art form div #mas {
   position: absolute;
   right: 12px;
   top: 12px;
 }
 
-.section-info-art form button {
+.section-info-art form #add-cart-btn {
   width: 100%;
   height: 3rem;
   font-size: 1.2rem;
@@ -287,8 +299,34 @@ nav ul li {
           align-items: center;
 }
 
-.section-info-art form button svg {
+.section-info-art form #add-cart-btn svg {
   margin-right: 5px;
+}
+
+@media (orientation: landscape) {
+  body main .imagenes-art {
+    text-align: center;
+  }
+  body main .imagenes-art #img-principal {
+    width: 90%;
+    height: 100vh;
+  }
+  body main .imagenes-art .prev {
+    left: 3rem;
+  }
+  body main .imagenes-art .next {
+    right: 3rem;
+  }
+  .section-info-art {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #carro {
+    width: 80vw;
+    height: 50vh;
+  }
 }
 
 @media (min-width: 1100px) {
@@ -299,8 +337,6 @@ nav ul li {
     display: none;
   }
   body header #indice-cart {
-    top: 20px;
-    right: 40px;
     width: 20px;
     height: 20px;
     font-size: 1.1rem;
@@ -308,7 +344,7 @@ nav ul li {
   body header #cart {
     width: 40px;
     height: 30px;
-    margin-right: 15px;
+    margin-right: 0;
   }
   body header #avatar {
     width: 30px;
@@ -377,10 +413,13 @@ nav ul li {
     font-size: 1.4rem;
     font-weight: 400;
   }
+  nav ul li a:hover {
+    color: #ff7d1a;
+    border-bottom: 1px solid #ff7d1a;
+  }
   #carro {
     width: 40%;
     height: 40vh;
-    z-index: 2;
   }
   #carro h4 {
     margin-top: 20px;
@@ -389,16 +428,16 @@ nav ul li {
   #carro section img {
     width: 90px;
   }
-  #carro section #cart-info #product-cart {
+  #carro section div h5 {
     font-size: 1.3rem;
   }
-  #carro section #cart-info #total-cart {
+  #carro section div h4 {
     font-size: 1.2rem;
   }
-  #carro section #cart-info #total-cart .precio-final {
+  #carro section div h4 .precio-final {
     font-size: 1.2rem;
   }
-  #carro #check {
+  #carro #check-btn {
     margin: 10px 0;
     width: 90%;
     height: 3.5rem;
@@ -410,30 +449,24 @@ nav ul li {
   .section-info-art h6 {
     font-size: 1.2rem;
   }
-  .section-info-art #price {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
   .section-info-art form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     gap: 1rem;
   }
-  .section-info-art form .cantidad input {
+  .section-info-art form div input {
     height: 3rem;
     font-size: 1.5rem;
     margin: 0;
   }
-  .section-info-art form .cantidad #menos {
+  .section-info-art form div #menos {
     top: 23px;
   }
-  .section-info-art form .cantidad #mas {
+  .section-info-art form div #mas {
     top: 17px;
   }
-  .section-info-art form button {
+  .section-info-art form #add-cart-btn {
     width: 90%;
   }
 }

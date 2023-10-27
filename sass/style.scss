@@ -33,13 +33,26 @@ body{
                 cursor: pointer;
             }
         }
+        #indice-cart{
+            text-align: center;
+            font-size: .7rem;
+            font-weight: 700;
+            position: absolute;
+            background-color: $Indice-cart-color;
+            color: $White;
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            top: 0.9rem;
+            right: 2.5rem;
+        }
         #avatar{
             width: 30px;
         }
     }
     main{
         width: 100vw;
-        section{
+        section{//seccion de visualizacion del producto
             width: 100%;
             #img-principal{
                 width: 100%;
@@ -51,7 +64,6 @@ body{
                 left: 10px;
                 font-size: 2rem;
                 color: $White;
-                z-index: 1;
             }
             .next{
                 position: absolute;
@@ -78,7 +90,7 @@ nav ul{
     padding: 20px;
     width: 40%;
     height: 100vh;
-    z-index: 2;
+    z-index: 1;
     #close{
         margin: 0 0 20px 0;
         &:hover{
@@ -89,21 +101,11 @@ nav ul{
         margin: 10px 0;
         font-size: 1.2rem;
         font-weight: 700;
+        a{
+            text-decoration: none;
+            color: $Black;
+        }
     }
-}
-
-#indice-cart{
-    text-align: center;
-    font-size: .7rem;
-    font-weight: 700;
-    position: absolute;
-    background-color: $Indice-cart-color;
-    color: $White;
-    border-radius: 50%;
-    width: 15px;
-    height: 15px;
-    top: 10px;
-    right: 47px;
 }
 
 #carro{
@@ -112,19 +114,20 @@ nav ul{
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    width: 97%;
+    width: 90vw;
     height: 35vh;
-    right: 50px;
+    right: 1rem;
     background-color: $White;
     border: 0;
     border-radius: 10px;
+    z-index: 1;
     box-shadow: 20px 20px 20px 0px rgba(0,0,0,0.3);
     -webkit-box-shadow: 20px 20px 20px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 20px 20px 20px 0px rgba(0,0,0,0.3);
     h4{
         margin-top: 10px;
     }
-    section{
+    section{//informacion carrito de compras
         display: flex;
         width: 100%;
         padding: 20px 10px;
@@ -134,12 +137,12 @@ nav ul{
             width: 60px;
             border-radius: 5px;
         }
-        #cart-info{
-            #product-cart{
+        div{
+            h5{
                 font-size: 1.1rem;
                 color: $Dark-grayish-blue;
             }
-            #total-cart{
+            h4{
                 font-size: 1rem;
                 color: $Dark-grayish-blue;
                 .precio-final{
@@ -148,7 +151,7 @@ nav ul{
             }
         }
     }
-    #check{
+    #check-btn{
         margin: 10px 0;
         width: 80%;
         height: 2.5rem;
@@ -161,10 +164,10 @@ nav ul{
     }
 }
 
-.section-info-art{
-    padding: 20px;
+.section-info-art{//seccion informativa del producto
+    padding: 1.3rem;
     h6{
-        margin-bottom: 10px;
+        margin-bottom: 0.8rem;
         text-transform: uppercase;
         color: $Orange;
     }
@@ -176,7 +179,7 @@ nav ul{
         font-size: 0.95rem;
         margin-bottom: 1.5rem;
     }
-    #price{
+    div{
         display: flex;
         justify-content: space-between;
         .precio-art{
@@ -197,7 +200,7 @@ nav ul{
         }
     }
     form{
-        .cantidad{
+        div{
             position: relative;
             input{
                 width: 100%;
@@ -207,6 +210,12 @@ nav ul{
                 text-align: center;
                 margin-bottom: 10px;
                 border: 1px solid $Orange-light;
+                -moz-appearance: textfield;
+                &::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    margin: 0;
+                }
             }
             #menos{
                 position: absolute;
@@ -219,7 +228,7 @@ nav ul{
                 top: 12px;
             }
         }
-        button{
+        #add-cart-btn{
             width: 100%;
             height: 3rem;
             font-size: 1.2rem;
@@ -238,6 +247,34 @@ nav ul{
 }
 
 
+@media (orientation:landscape){
+    body{
+        main{
+            .imagenes-art{//seccion de visualizacion del producto
+                text-align: center;
+                #img-principal{
+                    width: 90%;
+                    height: 100vh;
+                }
+                .prev{
+                    left: 3rem;
+                }
+                .next{
+                    right: 3rem;
+                }
+            }
+        }
+    }
+
+    .section-info-art{//seccion informativa del producto
+        flex-direction: column;
+    }
+    #carro{
+        width: 80vw;
+        height: 50vh;
+    }
+}
+
 @media (min-width:1100px){
     body{
         header{
@@ -246,8 +283,6 @@ nav ul{
                 display: none;
             }
             #indice-cart{
-                top: 20px;
-                right: 40px;
                 width: 20px;
                 height: 20px;
                 font-size: 1.1rem;
@@ -255,7 +290,7 @@ nav ul{
             #cart{
                 width: 40px;
                 height: 30px;
-                margin-right: 15px;
+                margin-right: 0;
             }
             #avatar{
                 width: 30px;
@@ -315,13 +350,18 @@ nav ul{
             margin: 10px 0;
             font-size: 1.4rem;
             font-weight: 400;
+            a{
+                &:hover{
+                    color: $Orange;
+                    border-bottom: 1px solid $Orange;
+                }
+            }
         }
     }
     
     #carro{
         width: 40%;
         height: 40vh;
-        z-index: 2;
         h4{
             margin-top: 20px;
             font-size: 1.5rem;
@@ -330,11 +370,11 @@ nav ul{
             img{
                 width: 90px;
             }
-            #cart-info{
-                #product-cart{
+            div{
+                h5{
                     font-size: 1.3rem;
                 }
-                #total-cart{
+                h4{
                     font-size: 1.2rem;
                     .precio-final{
                         font-size: 1.2rem;
@@ -342,7 +382,7 @@ nav ul{
                 }
             }
         }
-        #check{
+        #check-btn{
             margin: 10px 0;
             width: 90%;
             height: 3.5rem;
@@ -355,13 +395,10 @@ nav ul{
         h6{
             font-size: 1.2rem;
         }
-        #price{
-            flex-direction: column;
-        }
         form{
             display: flex;
             gap: 1rem;
-            .cantidad{
+            div{
                 input{
                     height: 3rem;
                     font-size: 1.5rem;
@@ -374,7 +411,7 @@ nav ul{
                     top: 17px;
                 }
             }
-            button{
+            #add-cart-btn{
                 width: 90%;
             }
         }
