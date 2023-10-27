@@ -279,6 +279,7 @@ body{
 @media (min-width:1100px){
     body{
         header{
+            background-color: #ffff;
             align-items: center;
             .header-div-1{
                 #icon-menu{
@@ -322,63 +323,50 @@ body{
                 }
             }
         }
-        //main{}
-    }
-    
-    #modal-cart{
-        position: absolute;
-        top: 3rem;
-        right: 1.5rem;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        background-color: $White;
-        border: 1px solid $Orange;
-        border-radius: 0.4rem;
-        padding: 1rem;
-        margin: 0.5rem;
-        gap: 1rem;
-        h4{
-            font-size: 1.2rem;
-        }
-        section{
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            img{
-                width: 80px;
-                height: 80px;
-                border-radius: 0.4rem;
-            }
-            div{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                gap: 0.4rem;
-                h4{
-                    font-size: 1.2rem;
+        main{
+            flex-direction: row;
+            gap: 3rem;
+            padding: 2rem;
+            .main-section1{
+                img{
+                    border-radius: 1rem;
                 }
-                h5{
-                    color: $Grayish-blue;
-                    font-size: 1.1rem;
-                    .precio-final{
-                        color: $Black;
+                #icon-prev{
+                    top: 18rem;
+                    display: none;
+                }
+                #icon-next{
+                    top: 18rem;
+                    display: none;
+                }
+                .main-section1-div{
+                    display: grid;
+                    grid-template-columns: repeat(4,1fr);
+                    grid-template-rows: auto;
+                    gap: 2rem;
+                    margin-top: 1rem;
+                    img{
+                        border-radius: .5rem;
                     }
                 }
             }
-            #icon-trash{
-                font-size: 1.2rem;
+            .main-section2{
+                margin-top: 3rem;
+                form{
+                    flex-direction: row;
+                    div{
+                        input{
+                            height: 2.5rem;
+                        }
+                        #icon-menos{
+                            top: .4rem;
+                        }
+                        #icon-mas{
+                            top: .4rem;
+                        }
+                    }
+                }
             }
-        }
-        #check-btn{
-            border: 0;
-            border-radius: .4rem;
-            width: 90%;
-            font-size: 1rem;
-            font-weight: 700;
-            color: $White;
-            background: linear-gradient(to bottom, $Orange-light 50%, $Orange 50%);
-            padding: .5rem 0;
         }
     }
 }
