@@ -99,30 +99,32 @@ body{
         flex-direction: column;
         .main-section1{
             position: relative;
-            img{
-                width: 100%;
-            }
-            #img-1{
-                display: flex;
-            }
-            #img-4,#img-2,#img-3{
-                display: none;
-            }
-            #icon-prev{
-                position: absolute;
-                top: 9rem;
-                left: .5rem;
-                font-size: 1.5rem;
-                color: $White;
-            }
-            #icon-next{
-                position: absolute;
-                top: 9rem;
-                right: .5rem;
-                font-size: 1.5rem;
-                color: $White;
-            }
             .main-section1-div{
+                img{
+                    width: 100%;
+                }
+                #img-1{
+                    display: flex;
+                }
+                #img-2,#img-3,#img-4{
+                    display: none;
+                }
+                #icon-prev{
+                    position: absolute;
+                    top: 9rem;
+                    left: .5rem;
+                    font-size: 1.5rem;
+                    color: $White;
+                }
+                #icon-next{
+                    position: absolute;
+                    top: 9rem;
+                    right: .5rem;
+                    font-size: 1.5rem;
+                    color: $White;
+                }
+            }
+            #img-min-1,#img-min-2,#img-min-3,#img-min-4{
                 display: none;
             }
         }
@@ -346,30 +348,79 @@ body{
             gap: 3rem;
             padding: 2rem;
             .main-section1{
-                img{
-                    border-radius: 1rem;
-                }
-                #icon-prev{
-                    top: 18rem;
-                    display: none;
-                }
-                #icon-next{
-                    top: 18rem;
-                    display: none;
-                }
+                position: relative;
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+                grid-template-rows: auto auto;
+                grid-template-areas:"principal principal principal principal"
+                                    "img-min-1 img-min-2 img-min-3 img-min-4";
+                gap: 2rem;
                 .main-section1-div{
-                    display: grid;
-                    grid-template-columns: repeat(4,1fr);
-                    grid-template-rows: auto;
-                    gap: 2rem;
-                    margin-top: 1rem;
+                    grid-area: principal;
                     img{
-                        border-radius: .5rem;
+                        border-radius: 1rem;
                     }
+                    #icon-prev{
+                        top: 11rem;
+                        display: none;
+                    }
+                    #icon-next{
+                        top: 11rem;
+                        display: none;
+                    }
+                    #icon-close-lightbox{
+                        grid-area: icon-x;
+                    }
+                }
+                #img-min-1{
+                    grid-area: img-min-1;
+                    display: flex;
+                    width: 100px;
+                    border-radius: .5rem;
+                }
+                #img-min-2{
+                    grid-area: img-min-2;
+                    display: flex;
+                    width: 100px;
+                    border-radius: .5rem;
+                }
+                #img-min-3{
+                    grid-area: img-min-3;
+                    display: flex;
+                    width: 100px;
+                    border-radius: .5rem;
+                }
+                #img-min-4{
+                    grid-area: img-min-4;
+                    display: flex;
+                    width: 100px;
+                    border-radius: .5rem;
                 }
             }
             .main-section2{
                 margin-top: 3rem;
+                h1{
+                    font-size: 4rem;
+                    margin-bottom: 2rem;
+                }
+                p{
+                    font-size: 1.7rem;
+                    margin-bottom: 1.7rem;
+                }
+                .main-section2-div{
+                    margin-bottom: 1.5rem;
+                    div{
+                        h2{
+                            font-size: 2rem;
+                        }
+                        .descuento{
+                            font-size: 1.5rem;
+                        }
+                    }
+                    .old-price{
+                        font-size: 1.5rem;
+                    }
+                }
                 form{
                     flex-direction: row;
                     div{

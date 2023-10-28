@@ -134,21 +134,21 @@ body main .main-section1 {
   position: relative;
 }
 
-body main .main-section1 img {
+body main .main-section1 .main-section1-div img {
   width: 100%;
 }
 
-body main .main-section1 #img-1 {
+body main .main-section1 .main-section1-div #img-1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-body main .main-section1 #img-4, body main .main-section1 #img-2, body main .main-section1 #img-3 {
+body main .main-section1 .main-section1-div #img-2, body main .main-section1 .main-section1-div #img-3, body main .main-section1 .main-section1-div #img-4 {
   display: none;
 }
 
-body main .main-section1 #icon-prev {
+body main .main-section1 .main-section1-div #icon-prev {
   position: absolute;
   top: 9rem;
   left: .5rem;
@@ -156,7 +156,7 @@ body main .main-section1 #icon-prev {
   color: #ffffff;
 }
 
-body main .main-section1 #icon-next {
+body main .main-section1 .main-section1-div #icon-next {
   position: absolute;
   top: 9rem;
   right: .5rem;
@@ -164,7 +164,7 @@ body main .main-section1 #icon-next {
   color: #ffffff;
 }
 
-body main .main-section1 .main-section1-div {
+body main .main-section1 #img-min-1, body main .main-section1 #img-min-2, body main .main-section1 #img-min-3, body main .main-section1 #img-min-4 {
   display: none;
 }
 
@@ -461,32 +461,99 @@ body main .main-section2 form #form-btn {
     gap: 3rem;
     padding: 2rem;
   }
-  body main .main-section1 img {
-    border-radius: 1rem;
-  }
-  body main .main-section1 #icon-prev {
-    top: 18rem;
-    display: none;
-  }
-  body main .main-section1 #icon-next {
-    top: 18rem;
-    display: none;
-  }
-  body main .main-section1 .main-section1-div {
+  body main .main-section1 {
+    position: relative;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
-    -ms-grid-rows: auto;
-        grid-template-rows: auto;
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: "principal principal principal principal" "img-min-1 img-min-2 img-min-3 img-min-4";
     gap: 2rem;
-    margin-top: 1rem;
+  }
+  body main .main-section1 .main-section1-div {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-area: principal;
   }
   body main .main-section1 .main-section1-div img {
+    border-radius: 1rem;
+  }
+  body main .main-section1 .main-section1-div #icon-prev {
+    top: 11rem;
+    display: none;
+  }
+  body main .main-section1 .main-section1-div #icon-next {
+    top: 11rem;
+    display: none;
+  }
+  body main .main-section1 .main-section1-div #icon-close-lightbox {
+    grid-area: icon-x;
+  }
+  body main .main-section1 #img-min-1 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: img-min-1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100px;
+    border-radius: .5rem;
+  }
+  body main .main-section1 #img-min-2 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: img-min-2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100px;
+    border-radius: .5rem;
+  }
+  body main .main-section1 #img-min-3 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: img-min-3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100px;
+    border-radius: .5rem;
+  }
+  body main .main-section1 #img-min-4 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+    grid-area: img-min-4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100px;
     border-radius: .5rem;
   }
   body main .main-section2 {
     margin-top: 3rem;
+  }
+  body main .main-section2 h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+  body main .main-section2 p {
+    font-size: 1.7rem;
+    margin-bottom: 1.7rem;
+  }
+  body main .main-section2 .main-section2-div {
+    margin-bottom: 1.5rem;
+  }
+  body main .main-section2 .main-section2-div div h2 {
+    font-size: 2rem;
+  }
+  body main .main-section2 .main-section2-div div .descuento {
+    font-size: 1.5rem;
+  }
+  body main .main-section2 .main-section2-div .old-price {
+    font-size: 1.5rem;
   }
   body main .main-section2 form {
     -webkit-box-orient: horizontal;

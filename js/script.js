@@ -12,20 +12,17 @@ const icon_mas = document.querySelector("#icon-mas");
 const input = document.querySelector("#input-cantidad");
 const add_cart_btn = document.querySelector("#form-btn");
 const cant_art = document.querySelector(".cantidad-art");
-const precio_unit = document.querySelector(".precio-unit");
+const precio_unit = document.querySelectorAll(".precio-unit");
 const total_cart = document.querySelector(".precio-final");//Agrega signo $
 const trash = document.querySelector("#icon-trash");
-const prev = document.querySelector("#icon-prev");
-const next = document.querySelector("#icon-next");
-const img_1 = document.querySelector("#img-1");
-const img_2 = document.querySelector("#img-2");
-const img_3 = document.querySelector("#img-3");
-const img_4 = document.querySelector("#img-4");
+const main_section1 = document.querySelector(".main-section1");
+const img_principal = document.querySelector(".main-section1-div");
+const img_y_arrows = img_principal.children; //[#img-1,#img-2,#img-3,#img-4,#icon-prev,#icon-next]
 
 input.value = 0;
 modal_cart_section.style.display = "none";
 modal_btn.style.display = "none";
-img_1.style.display = "flex";
+img_y_arrows[0].style.display = "flex";
 
 icon_menu.addEventListener("click",()=>{
     menu.style.display = "flex";
@@ -64,7 +61,7 @@ add_cart_btn.addEventListener("click",(e)=>{
         indice_cart.style.display = "flex";
         indice_cart.textContent = input.value;
         cant_art.textContent = input.value;
-        total_cart.textContent = `$${input.value * precio_unit.textContent}`;
+        total_cart.textContent = `$${input.value * precio_unit[0].textContent}`;
     }else if(input.value == 0){
         cart_clean.style.display = "flex";
         modal_cart_section.style.display = "none";
@@ -81,51 +78,51 @@ trash.addEventListener("click",()=>{
     input.value = 0;
 })
 
-next.addEventListener("click",()=>{
+img_y_arrows[5].addEventListener("click",()=>{//next
     switch(true){
-        case (img_1.style.display === "flex"):{
-            img_1.style.display = "none";
-            img_2.style.display = "flex";
+        case (img_y_arrows[0].style.display === "flex"):{
+            img_y_arrows[0].style.display = "none";
+            img_y_arrows[1].style.display = "flex";
         }
         break;
-        case (img_2.style.display === "flex"):{
-            img_2.style.display = "none";
-            img_3.style.display = "flex";
+        case (img_y_arrows[1].style.display === "flex"):{
+            img_y_arrows[1].style.display = "none";
+            img_y_arrows[2].style.display = "flex";
         }
         break;
-        case (img_3.style.display === "flex"):{
-            img_3.style.display = "none";
-            img_4.style.display = "flex";
+        case (img_y_arrows[2].style.display === "flex"):{
+            img_y_arrows[2].style.display = "none";
+            img_y_arrows[3].style.display = "flex";
         }
         break;
-        case (img_4.style.display === "flex"):{
-            img_4.style.display = "none";
-            img_1.style.display = "flex";
+        case (img_y_arrows[3].style.display === "flex"):{
+            img_y_arrows[3].style.display = "none";
+            img_y_arrows[0].style.display = "flex";
         }
         break;
     }
 })
 
-prev.addEventListener("click",()=>{
+img_y_arrows[4].addEventListener("click",()=>{//prev
     switch(true){
-        case (img_1.style.display === "flex"):{
-            img_1.style.display = "none";
-            img_4.style.display = "flex";
+        case (img_y_arrows[0].style.display === "flex"):{
+            img_y_arrows[0].style.display = "none";
+            img_y_arrows[3].style.display = "flex";
         }
         break;
-        case (img_2.style.display === "flex"):{
-            img_2.style.display = "none";
-            img_1.style.display = "flex";
+        case (img_y_arrows[1].style.display === "flex"):{
+            img_y_arrows[1].style.display = "none";
+            img_y_arrows[0].style.display = "flex";
         }
         break;
-        case (img_3.style.display === "flex"):{
-            img_3.style.display = "none";
-            img_2.style.display = "flex";
+        case (img_y_arrows[2].style.display === "flex"):{
+            img_y_arrows[2].style.display = "none";
+            img_y_arrows[1].style.display = "flex";
         }
         break;
-        case (img_4.style.display === "flex"):{
-            img_4.style.display = "none";
-            img_3.style.display = "flex";
+        case (img_y_arrows[3].style.display === "flex"):{
+            img_y_arrows[3].style.display = "none";
+            img_y_arrows[2].style.display = "flex";
         }
         break;
     }
