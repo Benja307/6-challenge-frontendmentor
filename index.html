@@ -36,22 +36,28 @@
       <div id="modal-cart">
         <h4>Cart</h4>
         <!-- Informacion del carrito -->
-        <section>
+        <section id="modal-cart-section">
           <img src="./images/image-product-1-thumbnail.jpg" alt="imagen articulo en el carrito">
           <div>
             <h4 class="product-name">Fall Limited Edition Sneakers</h4>
-            <h5 id="total-cart">$<span class="precio-unit">125.00</span> x<span class="cantidad-art">3</span><span class="precio-final"> $375.00</span></h5>
+            <h5 id="total-cart">$<span class="precio-unit">125.00</span> x<span class="cantidad-art">3 </span> <span class="precio-final"> $375.00</span></h5>
           </div>
           <i class="bi bi-trash3" id="icon-trash"></i>
         </section>
         <button id="check-btn">Checkout</button>
+        <section id="cart-clean">
+          <h4>Your cart is empty.</h4>
+        </section>
       </div>
     </div>
   </header>
   <main>
     <!-- Seccion de visualizacion del producto -->
     <section class="main-section1">
-      <img src="./images/image-product-1.jpg" alt="imagen principal del producto" id="img-principal">
+      <img src="./images/image-product-1.jpg" alt="imagen 1 del producto" id="img-1">
+      <img src="./images/image-product-2.jpg" alt="imagen 2 del producto" id="img-2">
+      <img src="./images/image-product-3.jpg" alt="imagen 3 del producto" id="img-3">
+      <img src="./images/image-product-4.jpg" alt="imagen 4 del producto" id="img-4">
       <i class="bi bi-arrow-left-circle" id="icon-prev"></i>
       <i class="bi bi-arrow-right-circle" id="icon-next"></i>
       <div class="main-section1-div">
@@ -77,7 +83,7 @@
       <!-- Acá seleccionamos las unidades de articulo que deseamos -->
       <form>
         <div>
-          <input type="number">
+          <input type="number" id="input-cantidad">
           <i class="bi bi-dash" id="icon-menos"></i>
           <i class="bi bi-plus" id="icon-mas"></i>
         </div>

@@ -78,7 +78,8 @@ body{
                     bottom: 1rem;
                     left: 1rem;
                     font-weight: 700;
-                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
                     width: 1.1rem;
                     height: 1.1rem;
                     border-radius: 50%;
@@ -100,6 +101,12 @@ body{
             position: relative;
             img{
                 width: 100%;
+            }
+            #img-1{
+                display: flex;
+            }
+            #img-4,#img-2,#img-3{
+                display: none;
             }
             #icon-prev{
                 position: absolute;
@@ -177,6 +184,10 @@ body{
                         text-align: center;
                         font-size: 1.2rem;
                         -moz-appearance: textfield;
+                        &::-webkit-inner-spin-button{
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
                     }
                     #icon-menos{
                         position: absolute;
@@ -251,6 +262,8 @@ body{
                 font-size: 1rem;
                 .precio-final{
                     color: $Black;
+                    margin-left: 1rem;
+                    font-size: 1.1rem;
                 }
             }
         }
@@ -259,6 +272,8 @@ body{
         }
     }
     #check-btn{
+        display: flex;
+        justify-content: center;
         border: 0;
         border-radius: .4rem;
         width: 90%;
@@ -267,6 +282,9 @@ body{
         color: $White;
         background: linear-gradient(to bottom, $Orange-light 50%, $Orange 50%);
         padding: .5rem 0;
+    }
+    #cart-clean{
+        padding: 4rem;
     }
 }
 
